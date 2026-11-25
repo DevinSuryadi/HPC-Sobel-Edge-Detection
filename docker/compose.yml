@@ -1,0 +1,35 @@
+name: hpc
+
+x-node: &node
+  image: hpc-sobel:latest
+  build: .
+  restart: unless-stopped       # menyala lagi otomatis saat WSL/Docker dinyalakan ulang
+  volumes:
+    - ..:/work                  # folder proyek (kode, hasil)
+    - ${HOME}/hpc-data:/data    # dataset frame (disimpan di disk WSL agar cepat)
+  networks: [cluster]
+
+services:
+  single:
+    <<: *node
+    hostname: single
+    cpuset: "0,2,4,6,8,10,12,14"
+  node1:
+    <<: *node
+    hostname: node1
+    cpuset: "0,2"
+  node2:
+    <<: *node
+    hostname: node2
+    cpuset: "4,6"
+  node3:
+    <<: *node
+    hostname: node3
+    cpuset: "8,10"
+  node4:
+    <<: *node
+    hostname: node4
+    cpuset: "12,14"
+
+networks:
+  cluster: {}

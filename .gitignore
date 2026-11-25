@@ -1,0 +1,32 @@
+# ===== Hasil kompilasi (dibuat ulang dengan `make`) =====
+bin/*
+# kecuali dokumen Markdown di bin/ (NARASI_PRESENTASI.md)
+!bin/*.md
+*.o
+*.out
+
+# ===== Video: sumber (24fps_4096x2160.mp4) dan hasil (results/video/) =====
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+
+# ===== Frame mentah (normalnya tersimpan di ~/hpc-data, bukan di folder proyek) =====
+*.ppm
+*.pgm
+
+# ===== Cadangan CSV dari run eksperimen sebelumnya =====
+*.csv.bak
+
+# ===== Python =====
+__pycache__/
+*.pyc
+
+# ===== Editor / sistem operasi =====
+.vscode/
+.claude/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
