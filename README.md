@@ -1,6 +1,6 @@
 # Deteksi Tepi Video dengan Operator Sobel: V0, V1 (OpenMP), V2 (Hybrid MPI–OpenMP)
 
-Implementasi proposal UTS High Performance Computing: *Optimasi Sistem Parallel pada Deteksi
+*Optimasi Sistem Parallel pada Deteksi
 Tepi Video Menggunakan Operator Sobel dengan Hybrid MPI–OpenMP*.
 
 | Versi | Berkas | Isi |
@@ -22,8 +22,6 @@ results/                 results.csv, summary.md/csv, grafik, frame contoh, vide
 Makefile                 build semua versi (gcc/mpicc -O2 -fopenmp)
 ```
 
-Dataset frame dan keluaran PGM disimpan di disk WSL (`~/hpc-data`, dipasang sebagai `/data`
-di container), bukan di folder proyek, karena ukurannya beberapa GB.
 
 ## Lingkungan: cluster teremulasi dengan Docker
 
